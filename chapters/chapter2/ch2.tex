@@ -1,7 +1,142 @@
-\chapterauthor{Scott turner}{Canterbury Christ Church University, UK}
-\chapter{Basic Concepts}
+\chapter{Basic Concepts: Looping and Decisions, functions and a bit more}
+\section{Introduction}
+Previously we have looked at sequences one instruction follows another... We can do a lot with this construct. But have a look at the code below.
+\subsection{The code}
+\begin{lstlisting}
+import turtle
+scrn=turtle.getscreen()
+firstturtle =turtle.Turtle()
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.right(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.right(120)
+firstturtle.right(60)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.right(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.left(120)
+firstturtle.forward(100)
+firstturtle.right(120)
 
+\end{lstlisting}
+\newline
+How long was it before you go bored? Looking at it, it is not the easiest to see quickly what it does. If it is not easy to follow it means it also easy for mistakes to occcur. What it actually does is draws four triangles.
 
+\section{looping}
+One of the things you might have seen in the previous code is the same things were being repeated so perhaps we want to write out the bit to repeat once and the repeat that. We can - loops.
+\newline
+\subsection{Looping : for y in range (x)}
+We can see a repeat set of instructions.
+In Python you MUST indent
+The instruction for i in range(x) allows us to repeat x times 
+Note i goes from 0 to x-1 and we MUST intent everything in the loop
+\begin{lstlisting}
+for i in range(2):  
+    firstturtle.forward(100)  
+    firstturtle.left(120)  
+    firstturtle.forward(100)  
+    firstturtle.left(120)  
+    firstturtle.forward(100)  
+    firstturtle.right(120)
+\end{lstlisting}
+
+\subsection{infinite loops}
+Some times we want to create a system that just keeps repeating. for example If we were running a physical system and want to keep reading in and outputting data. This is important in Games.\paragraph{}
+In Python we can do this with while True:  (this loops ‘infinitely’).
+\begin{lstlisting}
+import turtle
+scrn=turtle.getscreen()
+firstturtle =turtle.Turtle()
+while True:
+    firstturtle.pendown()
+    firstturtle.forward(10)
+    firstturtle.penup()
+    firstturtle.right(10)
+\end{lstlisting}
+It goes on forever or until we stop it.
+
+\subsection{Play time}
+Ok let's play. There are three examples. Before running the code read through it, what do you think it does, after you have run it did it do what you expected and if not what was defifferent. \paragraph{}
+The goal strangely is not about getting it right but to test your mental model of what is happening and correct it.
+
+\begin{lstlisting}
+import turtle
+
+scrn=turtle.getscreen()
+firstturtle =turtle.Turtle()
+
+for i in range(2):
+  firstturtle.forward(100)
+  firstturtle.left(120)
+  firstturtle.forward(100)
+  firstturtle.left(120)
+  firstturtle.forward(100)
+  firstturtle.right(120)
+firstturtle.right(60)
+for i in range(2):
+  firstturtle.forward(100)
+  firstturtle.left(120)
+  firstturtle.forward(100)
+  firstturtle.left(120)
+  firstturtle.forward(100)
+  firstturtle.right(120)
+\end{lstlisting}
+
+Second code
+\begin{lstlisting}
+import turtle
+scrn=turtle.getscreen()
+firstturtle =turtle.Turtle()
+while True:
+  firstturtle.pendown()
+  firstturtle.circle(40)
+  firstturtle.penup()
+  firstturtle.left(10)
+\end{lstlisting}
+
+Third one
+\begin{lstlisting}
+import turtle
+scrn=turtle.getscreen()
+firstturtle =turtle.Turtle()
+while True:
+  firstturtle.pendown()
+  for loop in range (4):
+    firstturtle.circle((loop+1)*10)
+    firstturtle.penup()
+    firstturtle.left(10)
+\end{lstlisting}
+
+\subsection{While}
+This bit kind of crosses over between this section and the next.
+We often to want to change what happens based on a decision
+
+We can make loops that change actions depending on a condition/decision
+\begin{lstlisting}
+i =1
+while i <6
+    print(i)
+    i =i+1
+\end{lstlisting}
+In the code above i will start as i and then loop while the value of i is less than 6, printing the value of i on the screen and add 1 to the value of i.
+
+\url{https://www.w3schools.com/python/python_while_loops.asp}
+
+\section{Decisions}
 
 
 
