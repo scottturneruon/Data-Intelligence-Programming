@@ -1,0 +1,94 @@
+\chapter{Methods}
+So in the last two chapters we have looked at looping, making decisions and sequences and we started work on our games.\paragraph{}
+So we left the game
+\begin{lstlisting}
+room="hall“
+while True:
+  room=input("Which room? ")
+  if room=="hall" or room=="Hall":
+     print("you are in the hall - there are two rooms off this\n -A kitchen\n-A study\n")
+  elif room=="kitchen":
+      print("your are in the kitchen")
+  elif room=="study": 
+     print("you are in the Study")
+  else:
+      print("You have entered the Twilight Zone and are lost in space and Time")
+
+\end{lstlisting}
+It is getting better but we still have some issues.\paragraph{}
+We can jump from kitchen to study without going through the hall.
+What if we want to have rooms coming of the kitchen to other rooms?
+Just a few issues.
+\section{define it}
+So what if we made the rooms it a ‘thing’ and prints messages but also helps us structure what happens next. So what if we start defining what each room is. I am going to sneek in inputs as well. So we have a way of defining the room.
+\begin{lstlisting}
+def hall():
+  print("you are in the hall - there are two rooms off this\n -A kitchen\n-A study\n")
+  room=input("Which room? ")
+  if room=="kitchen":
+    kitchen()
+  elif room=="study":
+    study()
+  else:
+    print("You have entered the Twilight Zone and are lost in space and Time")
+
+def kitchen():
+  print("your are in the kitchen, there is nothing in here") 
+  print("You leave this room and back to the Hall")
+  hall()  
+
+def study():
+  print("you are in the Study")
+  print("Back to the hall")
+  hall()
+  
+while True:
+    hall()
+\end{lstlisting}
+You always start in the hall
+When you leave the kitchen and study you must go back to the hall - this is has just been done to make the changes easier for the moment.\paragraph{}
+So what have we done with these def lines is define what happens when we are in a room. We can change what happens in a room without necessarily altering what happens in other rooms. So if I looking for what happens in the kitchen I only need to go and look at:
+\begin{lstlisting}
+def kitchen():
+  print("your are in the kitchen, there is nothing in here") 
+  print("You leave this room and back to the Hall")
+  hall() 
+\end{lstlisting}
+These defs are subroutines.
+
+\section{local and global}
+So lets add in an item so we can pick it up or put it down.
+
+\begin{lstlisting}
+item ="No items"
+
+def hall():
+  print("you are in the hall - there are two rooms off this\n -A kitchen\n-A study\n")
+  room=input("Which room? ")
+  if room=="kitchen":
+    kitchen()
+  elif room=="study":
+    study()
+  else:
+    print("You have entered the Twilight Zone and are lost in space and Time")
+
+def kitchen():
+  #global variable which means change it here change it everywhere
+  global item
+  item="a knife"
+  #when printing out strings we can use the + to
+  #combine them and # is for comments
+  print("your are in the kitchen, there is "+item) 
+  print("You leave this room and back to the Hall")
+  hall()  
+
+def study():
+  print("You are carrying "+item)
+  print("you are in the Study")
+  print("Back to the hall")
+  hall()
+  
+while True:
+    hall()
+\end{lstlisting}
+If we had created item inside one of the defs it could only we seen within the define not outside of it. So we need in this case to have a variable item that is seen and can be changed anywhere that is the global bit seen in kitchen():

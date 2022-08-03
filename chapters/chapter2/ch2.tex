@@ -137,6 +137,85 @@ In the code above i will start as i and then loop while the value of i is less t
 \url{https://www.w3schools.com/python/python_while_loops.asp}
 
 \section{Decisions}
+We have already seen a decision being made in the while previous. so let explore more.
+\subsection{What conditions can be use?}
+Python supports :
+\begin{itemize}
+    \item Equals: a == b
+    \item Not Equals: a != b
+    \item Less than: a < b
+    \item Less than or equal to: a <= b
+    \item Greater than: a > b
+    \item Greater than or equal to: a >= b
+    \item Also join them with and or
+\end{itemize}
+\url{https://www.w3schools.com/python/python_conditions.asp }
+\subsection{If-elif-else our basic decisions}
+THESE ARE NOT LOOPS - they don't loop back on their own.
+
+
+Example taken from \url{https://www.w3schools.com/python/python_conditions.asp}
+\begin{lstlisting}
+a = 200
+b = 33
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
+else:
+    print("a is greater than b")
+\end{lstlisting}
+If b is greater than a then print (b is greater than a) and then finishes checking it doesn't check any of the others. If it is not true then the system looks at elif a==b if that true print an appropriate message and finishes checking. If that isn't true it looks at the next test in this case else which is always last and means on any other situation do this.\paragraph{} We can only have one if or else but we can have as many elif's as we need.
+
+\section{Let's build a game}
+We are going to put in to practice some of the ideas we have met over the last two chapters. \paragraph{}
+We are going to build a mystery game. Starting point we will add to it later.
+\begin{itemize}
+    \item Three rooms to explore Hall, Study, Kitchen
+    \item You Enter a room and different message comes up on the screen
+    \item You can only be in one room at a time
+    \item If you try to enter a room that doesn’t exist you get a message 
+\end{itemize}
+\subsection{Our first go}
+\begin{lstlisting}
+room="hall“
+if room=="hall" or room=="Hall":
+  print("you are in the hall - there are two rooms off this\n -A kitchen\n-A study\n")
+elif room=="kitchen":
+  print("your are in the kitchen")
+elif room=="study":
+  print("you are in the Study")
+else:  
+ print("You have entered the Twilight Zone and are lost in space and Time")
+\end{lstlisting}
+Ok, it is retty uninspiring. Every time we run it says the same thing
+It does on room and the program stops.\paragraph{}
+So we need to improve this a bit. Allow us to move between rooms so we need to get it to repeat and keep repeating.
+\subsection{Revised version}
+So we add an infinite loop (via while True:)
+\begin{lstlisting}
+room="hall“
+while True:
+  room=input("Which room? ")
+  if room=="hall" or room=="Hall":
+     print("you are in the hall - there are two rooms off this\n -A kitchen\n-A study\n")
+  elif room=="kitchen":
+      print("your are in the kitchen")
+  elif room=="study": 
+     print("you are in the Study")
+  else:
+      print("You have entered the Twilight Zone and are lost in space and Time")
+
+\end{lstlisting}
+It is getting better but we still have some issues.\paragraph{}
+We can jump from kitchen to study without going through the hall.
+What if we want to have rooms coming of the kitchen to other rooms?
+Just a few issues.
+
+So what if we made the rooms it a ‘thing’ and prints messages but also helps us structure what happens next. This is something we will develop later. \url{https://www.w3schools.com/python/ref_keyword_def.asp } 
+
+
+
 
 
 
