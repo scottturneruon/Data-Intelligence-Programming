@@ -91,4 +91,38 @@ def study():
 while True:
     hall()
 \end{lstlisting}
-If we had created item inside one of the defs it could only we seen within the define not outside of it. So we need in this case to have a variable item that is seen and can be changed anywhere that is the global bit seen in kitchen():
+If we had created item inside one of the defs it could only we seen within the define not outside of it. So we need in this case to have a variable item that is seen and can be changed anywhere that is the global bit seen in kitchen().
+
+\subsection{How a go yourself}
+Using the Murder Mystery Games build your own and then:
+\begin{itemize}
+    \item Add new descriptions for all the rooms
+    \item Add at least two new rooms.
+\end{itemize}
+
+\section{Digging a bit deeper into def}
+We saw a bit earlier that we create using def small routines that we can use over and over again. As examples hall() and kitchen(). These we can think of as subroutines (sometimes methods, functions, procedures,...). That allow us to define something once and then use it over and over again.\paragraph{}
+So the question arises why bother? There are many positive reasons to do this:
+\begin{itemize}
+    \item We only need write the code once and so if we want to change what it does we just go to one place and change it and it is changed where it is used.
+    \item Related to the last point if something goes wrong with that function we only need to go to the def part that defines it.
+    
+\end{itemize}
+So the elements in the definition of a function can be seen in the example below:
+\begin{lstlisting}
+  def move(direction):
+    if direction == "North"
+        return 1
+    else:
+        print("You can't go that way")
+        return 0
+\end{lstlisting}
+Might look a bit scary but it isn't if we break it down.\paragraph{}
+We give the subroutine a name in this case move and we can also allow a value/"thing" to brought into the subroutine in this case direction. In all case that we use the def we end the line with a colon. All the next lines of code that are part of the subroutine are indented just like we saw with loops and ifs.\paragraph{}
+Just as we can pass things into the subroutine we can pass things out - this is the role of return. So in the example if direction = "North" a 1 is return otherwise (or else) we get a message and 0 is passed out of the subroutine.\paragraph{}
+In the code when we want to use it we could have a line that says 
+\begin{lstlisting}
+  value=move("East")
+\end{lstlisting}
+
+We get a 1 or 0 stored in value depending on what was included in the move().
