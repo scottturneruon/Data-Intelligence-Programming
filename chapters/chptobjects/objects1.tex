@@ -1,2 +1,17 @@
 \chapter{Objects}
 Everything in Python is an Object. That is a bold statement and what does it actually mean?
+
+\section{inheriting}
+
+\begin{lstlisting}
+class player(person):
+  pass
+\end{lstlisting}
+All the attributes and methods from person class but don’t want to add more –use pass
+\begin{lstlisting}
+class player(person): 
+ def __init__(self, name): 
+   super().__init__(name)
+
+\end{lstlisting}
+But now we can also add methods and attributes and over-write methods
