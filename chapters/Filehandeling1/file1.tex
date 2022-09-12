@@ -1,1 +1,77 @@
 \chapter{Basic file handling}
+\section{basics}
+\subsection{Reading text files}
+If the text file exists and is the rightplace – two lines
+\begin{verbatim}
+ f = open("first.txt")
+ print(f.read())   
+\end{verbatim}
+
+If the text file exists and is the right place –file.readline() allows us to read a text file line by line.• Good practice file.close() when we are finished
+\begin{verbatim}
+   f1 = open("first.txt", "r")
+   print("First line is "+f1.readline())
+   print("Second line is "+f1.readline())
+   f.close() 
+\end{verbatim}
+\subsection{Writing and Creating Text Files}
+f = open("second.txt", "w") allows to write to a file or create and write to a file.‘w’ for write.
+
+\begin{verbatim}
+    f = open("second.txt", "w")
+    f.write("Well it is either createdor overwritten second.txt")
+    f.close()f = open("second.txt", "r")
+    print(f.read())
+\end{verbatim}
+
+
+• WARNING: this will overwrite an existing file
+• Creates a file second.txt for writing
+• Writes the text• Closes the file
+• Reads in the file
+
+\subsection{Appending}
+
+• We need often to write to an existingfile.
+• So we use f = open("second.txt","a")
+• Instead of “w” for write we use “a” for append.
+\begin{verbatim}
+    f = open("second.txt", "a")
+    f.write(" WE have added to second.txt")
+    f.close()
+\end{verbatim}
+
+\section{Playing with files}
+Task
+
+(i) Run and comment this code
+
+https://jupyterhub.canterbury.ac.uk/hub/user-redirect/lab/tree/filescsv/CSVfile.ipynb or alternatively if there are issues with the first link 
+
+csvfiles-csv.zip
+
+
+or
+
+https://github.com/scottturneruon/csvfiles/releases/tag/csv
+
+(ii) In the notebook click on + and it should start a box with [ ] next to it go back up to the top on where it says code using the pull-down menu change it to Markdown. Now we can enter text we are combining both the text and code into one notebook.
+
+(iii) Go through the notebook using the code and the markup write a tutorial for how the CSV code words and how some can use it.
+
+ 
+
+Guidance
+
+Pass
+
+A notebook using Python that solve both Tasks produced. The requirements are demonstrated to an acceptable level in terms of clarity of the explanation in the notebook and detail.
+
+Merit
+
+As in all the requirements of the Pass, but extended by adding more than the basic code in this activity. The explanation is clear and shows the ability to explain a complex or difficult topic clear so it could be used to explain the idea to an intelligent person who is not a computer specialist.
+
+Distinction
+
+As in all the requirements of the merit but extended in the following ways. The extension of the code but the extended code is taken from your reading around the area with appropriate references added - the extension code should not be based on material we have used and covered in the class.
+
