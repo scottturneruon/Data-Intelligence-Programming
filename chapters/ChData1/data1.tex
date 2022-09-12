@@ -1,0 +1,87 @@
+\chapter{Staert of playing with data}
+Purpose to investigate simple plots using the matplotlib module and combine that with using CSV file handling
+
+\section{Lets Play}
+(i) Create a new Juypter Notebook for this task.
+
+(ii) Using the code and the markdown make a tutorial to explain the following code:
+
+- break the code up into chunks to explain what is happening what the code does
+
+-you can use this file for the CSV file
+
+covid_1.csv
+
+
+- Think about how you would explain what is going on to another person.
+
+- Now using either the discussion board or speaking in your group explain what is happening.
+
+import csvfrom matplotlib import pyplot as pltdata1=[]data2= []data0= []with open('covid_1.csv', 'r') as file:reader = csv.reader(file)for row in reader:data1.append(float(row[1]))data2.append(float(row[2]))data0.append(int(row[0]))file.close()plt.plot(data0,data1)plt.plot(data0,data2)plt.show()
+Task 2
+
+(i) Replace the lines marked with # below with the line not marked with #
+
+#plt.plot(data0,data1)#plt.plot(data0,data2)plt.plot(data0, data1,'ro',data0,data2,'b.-')plt.show()
+(ii) Describe what the new line does.
+
+(iii) Experiment with different parameters in the ' ' sections of the line, change colours and shapes.
+
+(iv) Using https://www.w3schools.com/python/matplotlib_labels.asp as a reference source and axes labels and titles to your plot.
+
+(v) Using https://www.w3schools.com/python/matplotlib_line.asp as a reference source experiments with different styles of line.
+
+Task 3
+
+Using https://www.w3schools.com/python/matplotlib_intro.asp as your starting point and all the links to MATPLOTLIB in the left-hand column add more features to the graphs for examples grids, markers and anything you feel is appropriate to make the graphs more informative. You could try subplots for example.
+
+Task 4
+
+(i) In your notebook add this code
+
+import numpy as npx = np.random.normal(170, 10, 250)plt.hist(x)plt.show()
+(ii) numpy is another module we use in data science https://www.w3schools.com/python/numpy/default.asp for details. Allow us to add in arrays, probability distributions, etc. Taking what you have learn in task 3 and appropriate axes labels etc to make the graph much more understandable.
+
+Thought 
+
+It is usually your job as a Data Scientist to present the information in as accessible a form a possible, often your main job along with analysing the data is to get the data presented in a format that is most accessible to the reader.
+
+\section{Lets play 2}
+Using this example from https://oxylabs.io/blog/python-parse-json#Converting-JSON-string-to-Python-object
+
+import json# Tuple is encoded to JSON array.languages = ("English", "French")# Dictionary is encoded to JSON object.country = {"name": "Canada","population": 37742154,"languages": languages,"president": None,}with open('countries_exported.json', 'w') as f:json.dump(country, f)
+Create a jupyter notebook that is a tutorial on what this does? As a minimum explain
+
+What the different collections used are?
+
+What dump does and what the effect of the final two lines?
+
+What does with open do and why do we use it?
+
+Task 2
+
+In your notebook add
+
+print(print(json.dumps(country, indent=4)) )
+Explain in the notebook what the difference between dump() and dumps() is.
+
+Experiment with ident=4 what does it do, include this in your notebook
+
+Task 3
+
+Create code replicating some of the features in task 1 and 2 but for a JSON formatted data called student containing:
+
+-name
+
+-id number
+
+-the three modules they are studying this semester
+
+-the three modules they are studying next semester.
+
+Save as JSON file student.json
+
+Task 4
+
+The Challenge: It is involves reading around ! Add to your notebook(s) code to read in a JSON file and display its contents.
+

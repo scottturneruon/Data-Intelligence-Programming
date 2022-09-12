@@ -1,0 +1,112 @@
+\chapter{Playing with Pandas}
+You overall Task
+
+To play and explore Panda and the DataFrame To produce a tutorial document to explain the experiments asked for and your own experimentation.
+
+In groups of 2 or 3 people I want you to work together to produce your own version of the tutorial.
+
+Rule: Do not move on to the next task until all members of the small group have finished.
+
+Task 1
+
+Create a new Jupyter Notebook for your tutorial (play with the markdown you met last week to improve the readability of the tutorial)
+
+import pandas as pdfrom matplotlib import pyplot as pltdf = pd.read_csv('covid_2.csv')print(df.to_string())data11=df.get('group')data21=df.get('group2')plt.plot(data11)plt.plot(data21)plt.show()
+File: 
+
+covid_2.csv
+
+
+Now imagine
+
+Group2: Is incidences of COVID-19 during a short time period for people35 years old or older and are healthworkers
+
+Group: Is incidences of COVID-19 during a short time period for people under 35 years old and are healthworkers 
+
+Using markdown explain
+
+(i) The data set to a reader, what is it essentially.
+
+(ii) Any observations of the plots, do they show anything?
+
+You can change the plots inline with what you did last week to make it easier to explain.
+
+Task 2
+
+What is a data-frame explain that somewhere or through the notebook using markdown.
+
+Task 3
+
+Add these an explain what the do - please explain what each one does individually to add the reader.
+
+(i) df.describe() #this might be of use https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html
+
+(ii) df.pct_change() #this might be of use https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm
+
+(iii) df.corr() #this might be of use https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm
+
+For each of these after the output has been produced using the markdown write down an explanation of what it shows.
+
+Task 4
+
+Using resources available for example but not exclusively
+
+ Python Pandas - Statistical Functions
+
+Python Pandas - Statistical Functions, Statistical methods help in the understanding and analyzing the behavior of data. We will now learn a few statistical functions, which we can apply on Pandas ob
+
+  Python | Pandas DataFrame - GeeksforGeeks
+
+A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.
+
+GeeksforGeeks
+
+Find six methods relating to DataFrames not covered in the activities and for each
+
+(i) Discuss in the group what the method does, what it shows about the data.
+
+(ii) Using markdown and a description of what the method does in your own words but explaining it to another reader.
+
+(iii) The code
+
+(iv) Using markdown. What does the method reveal about the data?
+
+Task 5
+
+Individually go through your tutorial you have just produced. Now imagine you were writing this for a Government Minister what would you change? 
+
+Reflection
+
+If you were given a dataset to analyse, what do you think are the important things that should be in the notebook to make it accessible to the reader?
+
+What do we have to think about when considering the accessibility of the notebook to the reader?
+
+Why would be want to use DataFrames in Python? Why not stick to plain CSV? Does your notebook explain this?
+
+\section{Can you did it your self}
+Goal
+
+Apply what you have learnt to 'real data'?
+
+Task
+
+(i) Go online and find some CSV file. It is up to what it is.possible starting point https://corgis-edu.github.io/corgis/csv/ (old but lots of data) WARNING these datasets are quite big you might want to find something smaller. Kaggle is good as well https://www.kaggle.com/datasets?fileType=csv
+
+(ii) Load into Jupyter and create a new notebook.
+
+(iii) Create a markdown entry to describe the dataset.
+
+(iv) Write code to load in the new dataset into python.
+
+(v) Use a combination of code and markdown; analysis and explain what it shows applying what you have done today
+
+(vi) 10 minutes before the end of the activity (approx. 12:20) you must be ready to share your analysis with another member of the class.
+
+Reflections
+
+Did the other person understand and ask questions?
+
+Can you use the questions asked to refine your analysis?
+
+Can you think of better ways to visualise the results?
+
