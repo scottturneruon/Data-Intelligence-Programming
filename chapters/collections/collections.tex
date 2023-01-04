@@ -17,4 +17,66 @@ print("item: "+product_detail[0]+" costs: £"+str(product_detail[1])+" can be fo
 
 \end{lstlisting}
 
+\section{Loooping in collections}
+We can loop through lists, etc in the same way – replace thislist with tuple etc. In other words any of the collections.• 
+\begin{lstlisting}
+    thislist = ["apple", "banana", "cherry"]
+    for x in thislist:  
+        print(x
+\end{lstlisting}
 
+\section{Tuples}
+Multiple items in a single variable
+• Ordered
+• Unchangable – can’t change, add or remove items once created – directly (can do it by making it a list and converting back though) - immutable
+• List uses [] Tuple use ()
+• Indexed
+
+\begin{lstlisting}
+    thislist = ("apple", "banana", "cherry")
+    for x in thislist:  
+        print(x
+\end{lstlisting}
+
+\section{Sets}
+Unordered
+Unchangeable sort of
+Unindexed
+uses {}
+No duplicates
+
+You can’t change a set but you can add using add() method for example products.add("dog")
+
+Two ways to remove an item from the set Pop() removes the last item in the set warning: not necessarily the last item put into the set e.g. product.pop()– it is unordered Remove() removes the item specified for example product.remove("bread")
+
+\section{Dictionaries}
+A little different• Store data values as key: value pairs• So lets return
+\newline
+\begin{lstlisting}
+    product_detail = {"flour", 3.59,"aisle 1","storeroom aisle A", 34}
+\end{lstlisting}
+
+\newline 
+How could a dictionary help? Well it could give meaning a bit• We have actual used this in our murder-mystery games in the room class
+
+As an example
+\begin{lstlisting}
+    product_detail = {
+     "product":"flour",
+    "price":3.59,
+    "store location":"aisle 1",
+    "storeroom location":"storeroom aisle A",
+    "no. in stock":34• }
+\end{lstlisting}
+The code
+\begin{lstlisting}
+    print(product_detail)
+    print(product_detail["product"])
+    print(product_detail["price"])
+\end{lstlisting}
+Produces
+\begin{verbatim}
+    {'product': 'flour', 'price': 3.59, 'store location': 'aisle 1','storeroom location': 'storeroom aisle A', 'no. in stock': 34}
+    flour
+    3.59
+\end{verbatim}
