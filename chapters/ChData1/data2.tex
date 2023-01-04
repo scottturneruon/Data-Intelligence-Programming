@@ -1,5 +1,5 @@
 \chapter{Playing with Pandas}
-You overall Task
+\section{You overall Task} 
 
 To play and explore Panda and the DataFrame To produce a tutorial document to explain the experiments asked for and your own experimentation.
 
@@ -7,14 +7,21 @@ In groups of 2 or 3 people I want you to work together to produce your own versi
 
 Rule: Do not move on to the next task until all members of the small group have finished.
 
-Task 1
+\section{Task 1}
 
 Create a new Jupyter Notebook for your tutorial (play with the markdown you met last week to improve the readability of the tutorial)
 
-import pandas as pdfrom matplotlib import pyplot as pltdf = pd.read_csv('covid_2.csv')print(df.to_string())data11=df.get('group')data21=df.get('group2')plt.plot(data11)plt.plot(data21)plt.show()
-File: 
-
-covid_2.csv
+\begin{verbatim}
+import pandas as pd
+from matplotlib import pyplot as plt
+df=pd.read_csv('covid_2.csv')
+print(df.to_string())
+data11=df.get('group')
+data21=df.get('group2')
+plt.plot(data11)
+plt.plot(data21)
+plt.show()
+\end{verbatim}
 
 
 Now imagine
@@ -31,23 +38,26 @@ Using markdown explain
 
 You can change the plots inline with what you did last week to make it easier to explain.
 
-Task 2
+\section{Task 2}
 
 What is a data-frame explain that somewhere or through the notebook using markdown.
 
-Task 3
+\section{Task 3} 
 
 Add these an explain what the do - please explain what each one does individually to add the reader.
 
-(i) df.describe() #this might be of use https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html
+(i) df.describe() #this might be of use 
+\url{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html}
 
-(ii) df.pct_change() #this might be of use https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm
 
-(iii) df.corr() #this might be of use https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm
+(ii) df.pct_change() #this might be of use \url{https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm}
+
+(iii) df.corr() #this might be of use
+\url{https://www.tutorialspoint.com/python_pandas/python_pandas_statistical_functions.htm}
 
 For each of these after the output has been produced using the markdown write down an explanation of what it shows.
 
-Task 4
+\section{Task 4}
 
 Using resources available for example but not exclusively
 
@@ -71,11 +81,11 @@ Find six methods relating to DataFrames not covered in the activities and for ea
 
 (iv) Using markdown. What does the method reveal about the data?
 
-Task 5
+\section{Task 5}
 
 Individually go through your tutorial you have just produced. Now imagine you were writing this for a Government Minister what would you change? 
 
-Reflection
+\section{Reflection}
 
 If you were given a dataset to analyse, what do you think are the important things that should be in the notebook to make it accessible to the reader?
 
