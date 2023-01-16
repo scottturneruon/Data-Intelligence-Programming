@@ -14,4 +14,49 @@ class player(person):
    super().__init__(name)
 
 \end{lstlisting}
+\section{Putting it together}
 But now we can also add methods and attributes and over-write methods
+\newline
+Let's put add in the def to make a more useful class
+\begin{lstlisting}
+    class room:
+      def __init__(self, name, description):
+        self.name = name
+        self.description = description
+      def displayRoom(self):
+        print(self.name)
+      def set_description(self, room_description):
+        self.description = room_description
+      def get_name(self, name):
+        return self.name
+\end{lstlisting}
+Even though this is a fairly simple bit of code it has a lot of the basic elements we need.
+\subsection{def __init__()}
+\begin{lstlisting}
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
+\end{lstlisting}
+All of our class need something to initialise them this the def __init__
+When we set up an instance of the class it sets up the starting point for the instance, so 
+In the case above the name and description associated with the instances and stores them as name and description. So if set up an instance of room called hall then in our program the description associated with hall would be stored in description.
+\subsection{adding methods}
+As well as storing data we want methods (see earlier chapter) to carry out operations
+\begin{lstlisting}
+      def displayRoom(self):
+        print(self.name)
+      def set_description(self, room_description):
+        self.description = room_description
+      def get_name(self, name):
+        return self.name
+\end{lstlisting}
+All, as in the previous chapter, are defined using def().
+\newline
+We have three methods defined here
+\begin{verbatim}
+    displayRoom() prints out the name of the room on the screen
+    set_description() changes or sets the description based on the description passed into it
+    get_name() pass back to the program what is stored in name or it gets the name  
+\end{verbatim}
+
+You must get into the habit of naming methods that change the data/attribute as starting with the set and those that obtain the data/attribute contents as starting with get. This is a widely used convention and one that you are expacted to use.
